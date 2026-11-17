@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weatherly — Simple Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-wrap">
+      <h1 class="brand">🌤️ Weatherly</h1>
+      <nav class="nav">
+        <a href="#" aria-current="page">Home</a>
+        <a href="#about">About</a>
+        <a href="mailto:you@example.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main App -->
+  <main class="container">
+    <!-- Search / Controls -->
+    <section class="controls">
+      <form id="searchForm" class="search">
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Enter city e.g. Lahore, Karachi, Delhi..."
+          aria-label="City name"
+          autocomplete="off"
+        />
+        <button id="searchBtn" type="submit" class="btn">Get Weather</button>
+        <button id="geoBtn" type="button" class="btn btn-ghost" title="Use my location">
+          📍 Use Location
+        </button>
+      </form>
+
+      <div class="toggles">
+        <label class="switch">
+          <input id="unitToggle" type="checkbox" />
+          <span class="slider"></span>
+          <span class="label">°C / °F</span>
+        </label>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section id="status" class="status" hidden></section>
+
+    <section id="card" class="card" hidden>
+      <div class="card-header">
+        <div>
+          <h2 id="place">—</h2>
+          <p id="dateText" class="muted">—</p>
+        </div>
+        <img id="icon" alt="Weather icon" width="96" height="96" />
+      </div>
+
+      <div class="grid">
+        <div class="metric">
+          <div class="metric-label">Temperature</div>
+          <div class="metric-value" id="temp">—</div>
+          <div class="muted" id="feels">—</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Condition</div>
+          <div class="metric-value" id="desc">—</div>
+          <div class="muted" id="clouds">—</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Humidity</div>
+          <div class="metric-value" id="humidity">—</div>
+          <div class="muted" id="pressure">—</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Wind</div>
+          <div class="metric-value" id="wind">—</div>
+          <div class="muted" id="visibility">—</div>
+        </div>
+      </div>
+
+      <div class="footer-row">
+        <span id="updated" class="muted">—</span>
+      </div>
+    </section>
+
+    <!-- Recent searches -->
+    <section class="recent" id="recentWrap" hidden>
+      <h3>Recent Searches</h3>
+      <div id="recentList" class="chip-row"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+      <h3>About</h3>
+      <p>
+        This app uses the <strong>OpenWeatherMap</strong> API for accurate live weather.
+        Toggle units (°C/°F), search by city, or use your current location.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="year"></span> Weatherly — Made by Salma</p>
+      <a href="#top" class="back-top">↑ Back to top</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
